@@ -5,13 +5,13 @@ const ws = require('express-ws')(app);
 
 const camera = require('./camera');
 
-const port = 8090;
-
-app.use(cors());
+const port = 3000;
 
 app.use((req, res, next) => {
     console.info(`Method: ${req.method} url: ${req.originalUrl}`)
 });
+
+app.use(cors());
 
 camera.startVideoStream(app);
 
